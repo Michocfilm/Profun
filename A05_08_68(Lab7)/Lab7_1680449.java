@@ -1,11 +1,12 @@
 import java.util.Scanner;
 public class Lab7_1680449{
     public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
+        /*Scanner sc=new Scanner(System.in);
         System.out.print("Input : ");
-        String[] input = sc.nextLine().split(" ");
-        System.out.println("Output : "+q2_1_myIndexOF(input[0], input[1]));
-        sc.close();
+        String[] input = sc.nextLine().split(" ");*/
+        //System.out.println("Output : "+q2_1_myIndexOF(input[0], input[1]));
+        //sc.close();
+        System.out.println(q2_3_replceWith("At KMITL CHALONGKRUNG BMI MTL", "MI", "CSP"));
     }
     // 2.1
     static int q2_1_myIndexOF(String str,String sub){
@@ -43,8 +44,36 @@ public class Lab7_1680449{
         return (index1 != -1 && index2 != -1 && index1 < index2);
     }
     //2.3
-    static String q2_3_replceWith(String str,String pattern,String newPattern){
-        return "Hello";
-    }
+    static String q2_3_replceWith(String str, String pattern, String newPattern) {
+        String result = "";
+        int i = 0;
 
+        while (i < str.length()) {
+            boolean match = true;
+            if (i + pattern.length() <= str.length()) {
+                for (int j = 0; j < pattern.length(); j++) {
+                    if (str.charAt(i + j) != pattern.charAt(j)) {
+                        match = false;
+                        break;
+                    }
+                }
+            } else {
+                match = false;
+            }
+            if (match) {
+                for (int j = 0; j < newPattern.length(); j++) {
+                    result += newPattern.charAt(j);
+                }
+                i += pattern.length();
+            } else {
+                result += str.charAt(i);
+                i++;
+            }
+        }
+        return result;
+    }
+    //2.4
+    static boolean q2_4_isClockwiseRoate(String str,String pattern){
+        return true;
+    }
 }
