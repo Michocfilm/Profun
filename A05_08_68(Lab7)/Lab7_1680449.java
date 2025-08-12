@@ -1,12 +1,36 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 public class Lab7_1680449{
     public static void main(String[] args){
         /*Scanner sc=new Scanner(System.in);
-        System.out.print("Input : ");
-        String[] input = sc.nextLine().split(" ");*/
-        //System.out.println("Output : "+q2_1_myIndexOF(input[0], input[1]));
-        //sc.close();
-        System.out.println(q2_3_replceWith("At KMITL CHALONGKRUNG BMI MTL", "MI", "CSP"));
+        // 2.1
+        System.out.print("Input 2.1 : ");
+        String[] input2_1 = sc.nextLine().split(" ");
+        System.out.println("Output 2.1 : "+q2_1_myIndexOF(input2_1[0], input2_1[1]));
+        // 2.2
+        System.out.print("Input 2.2 : ");
+        String[] input2_2 = sc.nextLine().split(" ");
+        System.out.println("Output 2.2"+q2_2_containsAndBefore(input2_2[0], input2_2[1], input2_2[2]));
+        // 2.3
+        System.out.print("Input 2.3 : ");
+        String[] input2_3 = sc.nextLine().split(" ");
+        System.out.println("Outpuut 2.3 :"+q2_3_replceWith(input2_3[0], input2_3[1], input2_3[2]));
+        // 2.4
+        System.out.print("Input 2.4 : ");
+        String[] input2_4 = sc.nextLine().split(" ");
+        System.out.println("Output 2.4 :"+q2_4_isClockwiseRoate(input2_4[0], input2_4[1]));
+        sc.close();*/
+        String[] input2_1 = {"PMRQNO","PM"}; // 2.1
+        String[] input2_2 = {"PMRQNO","PM","QNO"}; // 2.2
+        String[] input2_3 = {"At KMITL CHALONGKRUNG BMI MTL","MI","CSP"}; // 2.3
+        String[] input2_4 = {"KMITL","LK"}; // 2.4
+        // 2.1
+        System.out.println("2.1"+"\nInput : "+input2_1[0]+" "+input2_1[1]+"\nOutput :"+q2_1_myIndexOF(input2_1[0], input2_1[1]));
+        // 2.2
+        System.out.println("2.2"+"\nInput : "+input2_2[0]+" "+input2_2[1]+" "+input2_2[2]+"\nOutput :"+q2_2_containsAndBefore(input2_2[0], input2_2[1], input2_2[2]));
+        // 2.3
+        System.out.println("2.3"+"\nInput : "+input2_3[0]+" "+input2_3[1]+" "+input2_3[2]+"\nOutput :"+q2_3_replceWith(input2_3[0], input2_3[1], input2_3[2]));
+        // 2.4
+        System.out.println("2.4"+"\nInput : "+input2_4[0]+" "+input2_4[1]+"\nOutput :"+q2_4_isClockwiseRoate(input2_4[0], input2_4[1]));
     }
     // 2.1
     static int q2_1_myIndexOF(String str,String sub){
@@ -73,7 +97,27 @@ public class Lab7_1680449{
         return result;
     }
     //2.4
-    static boolean q2_4_isClockwiseRoate(String str,String pattern){
-        return true;
+    static boolean q2_4_isClockwiseRoate(String str, String pattern) {
+        if (pattern.length() > str.length()) {
+            return false;
+        }
+
+        String doublet = str + str;
+        int textLength = doublet.length();
+        int patternLength = pattern.length();
+
+        for (int i = 0; i <= textLength - patternLength; i++) {
+            boolean match = true;
+            for (int j = 0; j < patternLength; j++) {
+                if (doublet.charAt(i + j) != pattern.charAt(j)) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                return true;
+            }
+        }
+        return false;
     }
 }
