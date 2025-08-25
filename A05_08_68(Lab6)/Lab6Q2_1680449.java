@@ -11,8 +11,7 @@ public class Lab6Q2_1680449{
             if(arr[i]<=arr[i+1]){
                 bool = true;
             }else{
-                bool = false;
-                break;
+                return false;
             }
         }
         return bool;

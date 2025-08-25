@@ -1,24 +1,5 @@
-//import java.util.Scanner;
 public class Lab7_1680449{
     public static void main(String[] args){
-        /*Scanner sc=new Scanner(System.in);
-        // 2.1
-        System.out.print("Input 2.1 : ");
-        String[] input2_1 = sc.nextLine().split(" ");
-        System.out.println("Output 2.1 : "+q2_1_myIndexOF(input2_1[0], input2_1[1]));
-        // 2.2
-        System.out.print("Input 2.2 : ");
-        String[] input2_2 = sc.nextLine().split(" ");
-        System.out.println("Output 2.2"+q2_2_containsAndBefore(input2_2[0], input2_2[1], input2_2[2]));
-        // 2.3
-        System.out.print("Input 2.3 : ");
-        String[] input2_3 = sc.nextLine().split(" ");
-        System.out.println("Outpuut 2.3 :"+q2_3_replceWith(input2_3[0], input2_3[1], input2_3[2]));
-        // 2.4
-        System.out.print("Input 2.4 : ");
-        String[] input2_4 = sc.nextLine().split(" ");
-        System.out.println("Output 2.4 :"+q2_4_isClockwiseRoate(input2_4[0], input2_4[1]));
-        sc.close();*/
         String[] input2_1 = {"PMRQNO","PM"}; // 2.1
         String[] input2_2 = {"PMRQNO","PM","QNO"}; // 2.2
         String[] input2_3 = {"At KMITL CHALONGKRUNG BMI MTL","MI","CSP"}; // 2.3
@@ -48,7 +29,7 @@ public class Lab7_1680449{
         }
         return -1; 
     }
-        // 2.2
+    // 2.2
     static boolean q2_2_containsAndBefore(String input,String sub1,String sub2){
         int index1 = -1;
         int index2 = -1;
@@ -67,7 +48,7 @@ public class Lab7_1680449{
         }
         return (index1 != -1 && index2 != -1 && index1 < index2);
     }
-    //2.3
+    // 2.3
     static String q2_3_replceWith(String str, String pattern, String newPattern) {
         String result = "";
         int i = 0;
@@ -96,7 +77,7 @@ public class Lab7_1680449{
         }
         return result;
     }
-    //2.4
+    // 2.4
     static boolean q2_4_isClockwiseRoate(String str, String pattern) {
         if (pattern.length() > str.length()) {
             return false;
