@@ -5,5 +5,6 @@ public class tester {
         System.out.print("Input : ");
         String[] input = sc.nextLine().split(" ");
         System.out.println("Output : "+input.length);
+        sc.close();
     }
 }
