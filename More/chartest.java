@@ -8,5 +8,8 @@ public class chartest {
         int sum = (int)(a);//char to int จะได้ unicode ของ ค่าใน char 
         System.out.println(sum);
         System.out.println(s);
+        System.out.println(numm);
+        System.out.println(num);
+        System.out.println(o);
     }
 }

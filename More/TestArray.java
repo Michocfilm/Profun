@@ -12,5 +12,6 @@ public class TestArray {
         System.out.println(Arrays.toString(name));
         int smallet = (arr[0]>arr[1])?arr[0]:arr[1];
         System.out.println(smallet);
+        System.out.println(num);
     }
 }
